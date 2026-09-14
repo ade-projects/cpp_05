@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:27:24 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/13 18:15:10 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/14 12:01:47 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,39 +19,23 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
-	if (grade < 1)
-		throw Bureaucrat::GradeTooLow
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-
 	std::cout << "Parameterized constructor called for " << this->_name << std::endl;
-}
-
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src) : _name(src.getName()), _grade(src.getGrade())
 {
-	std::cout << "Copy constructor called: cloning from " << src._name << std::endl;	
+	std::cout << "Copy constructor called: cloning from " << src.getName() << std::endl;	
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
 {
+	std::cout << "Copy assignment operator called: copying attributes from " << src.getName() << std::endl;
 	if (this != &src)
-	{
 		this->_grade = src.getGrade();
-	}
-	std::cout << "Copy assignment operator called: copy attributes from " << src._name << std::endl;
 	return (*this);
 }
 
@@ -59,3 +43,38 @@ Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Destructor called for " << this->_name << std::endl;
 }
+
+std::string Bureaucrat::getName() const
+{
+	return (this->_name);
+}
+
+unsigned int Bureaucrat::getGrade() const
+{
+	return (this->_grade);
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high!");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low!");
+}
+
+void Bureaucrat::incrementGrade()
+{
+	if (this->_grade <= 1)
+		throw Bureaucrat::GradeTooHighException();
+	this->_grade--;
+}
+
+void Bureaucrat::DecrementGrade()
+{
+	if (this->_grade >= 150)
+		throw Bureaucrat::GradeTooLowException();
+	this->_grade++;
+}
+
