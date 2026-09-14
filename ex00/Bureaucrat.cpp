@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:27:24 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/14 12:01:47 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/14 13:06:43 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name), _gra
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	}
+}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src) : _name(src.getName()), _grade(src.getGrade())
 {
@@ -71,10 +71,15 @@ void Bureaucrat::incrementGrade()
 	this->_grade--;
 }
 
-void Bureaucrat::DecrementGrade()
+void Bureaucrat::decrementGrade()
 {
 	if (this->_grade >= 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade++;
 }
 
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)
+{
+	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
+	return (os);
+}

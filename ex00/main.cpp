@@ -6,7 +6,17 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:30:06 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/13 18:15:12 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/14 13:40:51 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
+
+int	main()
+{
+	std::cout
+
+
+
+
+}
