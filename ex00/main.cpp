@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:30:06 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/15 17:55:21 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/15 18:59:48 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ int	main()
 
 	Bureaucrat tidus("Tidus", 42);
 	std::cout << "Instance's attributes: " << tidus << "\n" << std::endl;
+	
+	// Uncomment next line to generate crash in program:
+	// Bureaucrat wrong_one("Wrong One", 0);
+
+	// Uncomment next line to generate crash in program:
+	// Bureaucrat wrong_two("Wrong Two", 234);
 
 	Bureaucrat tidusClone(tidus);
 	std::cout << "Instance's attributes: " << tidusClone << "\n" << std::endl;
@@ -111,5 +117,3 @@ int	main()
 
     return (0);
 }
-
-
