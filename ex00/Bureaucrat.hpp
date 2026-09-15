@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:28:39 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/14 13:06:28 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/15 12:52:58 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,20 @@ class Bureaucrat
 		{
 			public:
 				virtual const char* what() const throw();
-		}
+		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
-		}
+		};
 
 		std::string getName() const;
 		unsigned int getGrade() const;
+
 		void incrementGrade();
 		void decrementGrade();
-}
+};
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 
