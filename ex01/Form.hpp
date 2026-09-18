@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 11:11:22 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/16 18:43:38 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:44:12 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string>
 # include <exception>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {

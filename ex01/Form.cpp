@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 11:12:14 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/16 18:43:24 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/18 13:36:29 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ Form::Form() : _name("Form's name"), _isSigned(false), _signingGrade(150), _exec
 	std::cout << "Form default constructor called" << std::endl;
 }
 
-Form::Form(std::string name, bool isSigned, unsigned int signingGrade, unsigned int executingGrade)
-	: _name(name), _isSigned(isSigned), _signingGrade(signingGrade), _executingGrade(executingGrade)
+Form::Form(std::string name, unsigned int signingGrade, unsigned int executingGrade)
+	: _name(name), _isSigned(false), _signingGrade(signingGrade), _executingGrade(executingGrade)
 {
 	std::cout << "Form parameterized constructor called for " << this->_name << std::endl;
 	if (signingGrade < 1 || executingGrade < 1)
@@ -78,18 +78,16 @@ unsigned int Form::getExecutingGrade() const
 void Form::beSigned(const Bureaucrat& src)
 {
 	if (src.getGrade() <= this->_signingGrade)
-	{
-		this->isSigned = true;
-	}
+		this->_isSigned = true;
+	else
+		throw Form::GradeTooLowException();
 }
 
-
-
-
-
-
-
-
-
-
-
+std::ostream& operator<<(std::ostream& os, const Form& form)
+{
+	os << "Form's name: " << form.getName() << "\n"
+		<< "Status: " << (form.getSigned() ? "signed" : "not signed") << "\n"
+		<< "Signing grade needed: " << form.getSigningGrade() << "\n"
+		<< "Executing grade needed: " << form.getExecutingGrade();
+	return (os);
+}

@@ -6,11 +6,12 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:27:24 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/16 18:43:32 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/18 14:04:07 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("name"), _grade(150)
 {
@@ -19,7 +20,7 @@ Bureaucrat::Bureaucrat() : _name("name"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
-	std::cout << "Bucreaucrat parameterized constructor called for " << this->_name << std::endl;
+	std::cout << "Bureaucrat parameterized constructor called for " << this->_name << std::endl;
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
@@ -84,7 +85,15 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)
 	return (os);
 }
 
-void Bureaucrat::signForm()
+void Bureaucrat::signForm(Form& src)
 {
-	
+	try
+	{
+		src.beSigned(*this);
+		std::cout << this->_name << " signed " << src.getName() << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << this->_name << " couldn't sign " << src.getName() << " because " << e.what() << std::endl;
+	}
 }
