@@ -6,14 +6,14 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:27:24 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/19 18:39:04 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/20 17:07:07 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat() : _name("name"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("Default_Name"), _grade(150)
 {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
 }
@@ -81,6 +81,11 @@ void Bureaucrat::decrementGrade()
 
 void Bureaucrat::signForm(AForm& src)
 {
+	if (src.getSigned())
+	{
+		std::cout << this->_name << " couldn't sign " << src.getName() << " because this form is already signed" << std::endl;
+		return ;
+	}
 	try
 	{
 		src.beSigned(*this);
@@ -97,7 +102,7 @@ void Bureaucrat::executeForm(AForm const & form) const
 	try
 	{
 		form.execute(*this);
-		std::cout << this->_name << " successfully executed " << form.getName() << std::endl;
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	}
 	catch (std::exception& e)
 	{

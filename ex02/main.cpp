@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:18:29 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/19 19:12:47 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/20 17:26:30 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,32 @@
 
 int	main()
 {
-	std::cout << "ShrubberyCreationForm tests: \n" << std::endl;
+	std::cout << "\n-- ShrubberyCreationForm tests: --\n" << std::endl;
 
-	Bureaucrat high("High", 42);
-	Bureaucrat low("Low", 150);
-	ShrubberyCreationForm shrub("home");
+	Bureaucrat high("High_Level", 42);
+	Bureaucrat low("Low_Level", 150);
+	ShrubberyCreationForm shrub("Shrub");
 	std::cout << std::endl;
 
 	std::cout << "Attributes before signing:" << std::endl;
 	std::cout << shrub << "\n" << std::endl;
 		
-	std::cout << "Trying executing unsigned form:" << std::endl;
+	std::cout << "High_Level trying executing unsigned form:" << std::endl;
 	try
 	{
 		shrub.execute(high);
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Error: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
-	std::cout << "Trying with bureaucrat too low to sign:" << std::endl;
+	std::cout << "Low_Level trying to sign:" << std::endl;
 	low.signForm(shrub);
 	std::cout << std::endl;
 		
-	std::cout << "Trying with high enough to sign:" << std::endl;
+	std::cout << "high_Level trying to sign:" << std::endl;
 	high.signForm(shrub);
 	std::cout << std::endl;
 
@@ -50,30 +50,28 @@ int	main()
 	std::cout << shrub << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "Trying to low to execute:" << std::endl;
+	std::cout << "Low_Level trying to execute:" << std::endl;
 	try
 	{
-		shrub.execute(low);
+		low.executeForm(shrub);
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Error: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
-	std::cout << "Trying high enough to execute:" << std::endl;
+	std::cout << "High_Level trying to execute:" << std::endl;
 	try
 	{
-		shrub.execute(high);
+		high.executeForm(shrub);
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Error: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
-
-	std::cout << "Execution done! \n" << std::endl;
 	
-	std::cout << "-- Cleaning: --\n" << std::endl;
+	std::cout << "\n-- Cleaning: --\n" << std::endl;
 
 	return (0);
 }
