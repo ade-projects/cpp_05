@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:30:06 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/16 10:58:39 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/20 14:46:33 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,36 +19,16 @@ int	main()
 	Bureaucrat defaultBureaucrat;
 	std::cout << "Instance's attributes: " << defaultBureaucrat << "\n" << std::endl;	
 
-	Bureaucrat tidus("Tidus", 42);
-	std::cout << "Instance's attributes: " << tidus << "\n" << std::endl;
+	Bureaucrat junior("Junior", 42);
+	std::cout << "Instance's attributes: " << junior << "\n" << std::endl;
 	
-	Bureaucrat tidusClone(tidus);
-	std::cout << "Instance's attributes: " << tidusClone << "\n" << std::endl;
+	Bureaucrat juniorClone(junior);
+	std::cout << "Instance's attributes: " << juniorClone << "\n" << std::endl;
 
-	defaultBureaucrat = tidus;
+	defaultBureaucrat = junior;
 	std::cout << "Instance's attributes: " << defaultBureaucrat << std::endl;
 	std::cout << "(as _name is constant only _grade can be copied)" << std::endl; 
 
-	std::cout << "\n---\n" << std::endl;
-
-	std::cout << " - Getter and increment/decrement testing: - \n" << std::endl;
-	
-	try
-	{
-		Bureaucrat yuna("Yuna", 23);
-		std::cout << "Initial " << yuna.getName() << "'s grade is: " << yuna.getGrade() << "\n" << std::endl;
-	
-		yuna.incrementGrade();
-		std::cout << "After increment: " << yuna << "\n" << std::endl;
-
-		yuna.decrementGrade();
-		std::cout << "After decrement: " << yuna << "\n" << std::endl;
-	}
-	catch (std::exception& e)
-	{
-		std::cerr << "Unexpected error: " << e.what() << std::endl;
-	}
-	
 	std::cout << "\n---\n" << std::endl;
 
 	std::cout << " - Exception testing: instantiation: - \n" << std::endl;
@@ -64,53 +44,69 @@ int	main()
 	try
 	{
 		std::cout << "Trying with grade 0:" << std::endl;
-		Bureaucrat highLevel("High Level", 0);
+		Bureaucrat highLevel("High_Level", 0);
 	}
 	catch (std::exception& e)
 	{
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
-
 	std::cout << std::endl;
 
 	try
 	{
 		std::cout << "Trying with grade 234:" << std::endl; 
-		Bureaucrat lowLevel("Low Level", 234);
+		Bureaucrat lowLevel("Low_Level", 234);
 	}
 	catch (std::exception& e)
 	{
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
-
 	std::cout << "\n---\n" << std::endl;
 
-	std::cout << " - Exception testing: increment/decrement limits: - \n" << std::endl;
-
+	std::cout << " - Getters and increment/decrement testing: - \n" << std::endl;
+	
 	try
 	{
-		Bureaucrat first("First one", 1);
-		std::cout << first << std::endl;
+		Bureaucrat senior("Senior", 23);
+		std::cout << "Initial " << senior.getName() << "'s grade is: " << senior.getGrade() << std::endl;
+
 		std::cout << "Trying to increment by 1..." << std::endl;
-		first.incrementGrade();
+		senior.incrementGrade();
+		std::cout << "After increment: " << senior << std::endl;
+	
+		std::cout << "Trying to decrement by 1..." << std::endl;
+		senior.decrementGrade();
+		std::cout << "After decrement: " << senior << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() <<  std::endl;
+		std::cerr << "Unexpected error: " << e.what() << std::endl;
 	}
-
 	std::cout << std::endl;
 
 	try
 	{
-		Bureaucrat last("Last one", 150);
-		std::cout << last << std::endl;
-		std::cout << "Trying to decrement by 1..." << std::endl;
-		last.decrementGrade();
+		Bureaucrat president("President", 1);
+		std::cout << "Initial " << president.getName() << "'s grade is: " << president.getGrade() << std::endl;
+		president.incrementGrade();
+		std::cout << "After increment: " << president << "\n" << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Unexpected error: " << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat newbie("Newbie", 150);
+		std::cout << "Initial " << newbie.getName() << "'s grade is: " << newbie.getGrade() << std::endl;
+		newbie.decrementGrade();
+		std::cout << "After decrement: " << newbie << "\n" << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Unexpected error: " << e.what() << std::endl;
 	}
 
 	std::cout << "\n---\n" << std::endl;
