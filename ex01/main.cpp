@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:30:06 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/18 15:46:38 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/20 15:37:43 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main()
 	
 	try
 	{
-		Form low_form("Low Form", 151, 151);
+		Form low_form("Low_Form", 151, 151);
 	}
 	catch (std::exception& e)
 	{
@@ -41,7 +41,7 @@ int	main()
 
 	try
 	{
-		Form high_form("High Form", 0, 0);
+		Form high_form("High_Form", 0, 0);
 	}
 	catch (std::exception& e)
 	{
@@ -58,7 +58,12 @@ int	main()
 	std::cout << std::endl;
 
 	Form requests("Requests", 100, 100);
-	std::cout << "Instance's attributes: \n" << requests << std::endl;
+	std::cout << "Instance's attributes: \n"
+		<< "Form's name: " << requests.getName() << "\n"
+		<< "Status: " << (requests.getSigned() ? "signed" : "not signed") << "\n"
+		<< "Signing grade needed: " << requests.getSigningGrade() << "\n"
+		<< "Executing grade needed: " << requests.getExecutingGrade() << std::endl;
+	
 	std::cout << std::endl;
 
 	maggot.signForm(invoice);
@@ -67,6 +72,7 @@ int	main()
 	std::cout << std::endl;
 
 	director.signForm(invoice);
+	std::cout << "Instance's attributes are now: \n" << invoice << std::endl;
 	std::cout << std::endl;
 
 	director.signForm(expenses);
@@ -77,7 +83,12 @@ int	main()
 	std::cout << "Instance's attributes are now: \n" << requests << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "Cleaning: " << std::endl;
+	president.signForm(invoice);
+	president.signForm(expenses);
+	president.signForm(requests);
+	std::cout << std::endl;
+
+	std::cout << "Cleaning: \n" << std::endl;
 
 	return (0);
 }
