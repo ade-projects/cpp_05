@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:18:29 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/20 17:26:30 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/21 11:07:59 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,28 +50,16 @@ int	main()
 	std::cout << shrub << std::endl;
 	std::cout << std::endl;
 
+	
 	std::cout << "Low_Level trying to execute:" << std::endl;
-	try
-	{
-		low.executeForm(shrub);
-	}
-	catch (std::exception& e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
+	low.executeForm(shrub);	
 	std::cout << std::endl;
 
 	std::cout << "High_Level trying to execute:" << std::endl;
-	try
-	{
-		high.executeForm(shrub);
-	}
-	catch (std::exception& e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	
-	std::cout << "\n-- Cleaning: --\n" << std::endl;
+	high.executeForm(shrub);		
+	std::cout << std::endl;
+
+	std::cout << "-- Cleaning: --\n" << std::endl;
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:41:24 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/20 17:05:34 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/21 10:46:12 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		return ;
 	}
 
+	file << "" << std::endl;
 	file << "            .'. " << std::endl;
     file << "           / . \\ " << std::endl;
     file << "          |  |. | ,-'-. " << std::endl;
