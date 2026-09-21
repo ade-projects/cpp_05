@@ -6,44 +6,47 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:18:29 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/21 11:07:59 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/21 13:49:46 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include <iostream>
 #include <exception>
 
 int	main()
 {
+	std::cout << "\n-- Bureaucrats tests: --\n" << std::endl;
+
+	Bureaucrat president("President", 1);
+	Bureaucrat director("Director", 50);
+	Bureaucrat newbie("Newbie", 150);
+
 	std::cout << "\n-- ShrubberyCreationForm tests: --\n" << std::endl;
 
-	Bureaucrat high("High_Level", 42);
-	Bureaucrat low("Low_Level", 150);
 	ShrubberyCreationForm shrub("Shrub");
 	std::cout << std::endl;
 
 	std::cout << "Attributes before signing:" << std::endl;
 	std::cout << shrub << "\n" << std::endl;
 		
-	std::cout << "High_Level trying executing unsigned form:" << std::endl;
+	std::cout << "Director trying executing unsigned form:" << std::endl;
 	try
 	{
-		shrub.execute(high);
+		shrub.execute(director);
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
-	std::cout << "Low_Level trying to sign:" << std::endl;
-	low.signForm(shrub);
-	std::cout << std::endl;
-		
-	std::cout << "high_Level trying to sign:" << std::endl;
-	high.signForm(shrub);
+	std::cout << "Newbie trying to sign:" << std::endl;
+	newbie.signForm(shrub);
+	std::cout << "Director trying to sign:" << std::endl;
+	director.signForm(shrub);
 	std::cout << std::endl;
 
 	std::cout << "Attributes after signing: " << std::endl;
@@ -51,13 +54,19 @@ int	main()
 	std::cout << std::endl;
 
 	
-	std::cout << "Low_Level trying to execute:" << std::endl;
-	low.executeForm(shrub);	
+	std::cout << "Newbie trying to execute:" << std::endl;
+	newbie.executeForm(shrub);
+	std::cout << "Director trying to execute:" << std::endl;
+	director.executeForm(shrub);		
 	std::cout << std::endl;
 
-	std::cout << "High_Level trying to execute:" << std::endl;
-	high.executeForm(shrub);		
-	std::cout << std::endl;
+	std::cout << "\n-- RobotomyRequestForm tests: --\n" << std::endl;
+
+	RobotomyRequestForm robot("Robot");
+
+
+
+
 
 	std::cout << "-- Cleaning: --\n" << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:30:06 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/20 14:46:33 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/21 12:13:37 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -59,7 +59,7 @@ int	main()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	std::cout << "\n---\n" << std::endl;
 
@@ -80,7 +80,7 @@ int	main()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Unexpected error: " << e.what() << std::endl;
+		std::cout << "Unexpected error: " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -93,7 +93,7 @@ int	main()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Unexpected error: " << e.what() << std::endl;
+		std::cout << "Unexpected error: " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -106,7 +106,7 @@ int	main()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Unexpected error: " << e.what() << std::endl;
+		std::cout << "Unexpected error: " << e.what() << std::endl;
 	}
 
 	std::cout << "\n---\n" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:41:24 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/21 10:46:12 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/21 12:18:04 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: AForm("ShrubberyCreationForm", 145, 137), _target("Defaul_target")
+	: AForm("ShrubberyCreationForm", 145, 137), _target("Default_target")
 {
 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
@@ -59,7 +59,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 
 	if (!file.is_open())
 	{
-		std::cerr << "Error: file " << filename << " can't be opened!" << std::endl;
+		std::cout << "Error: file " << filename << " can't be opened!" << std::endl;
 		return ;
 	}
 

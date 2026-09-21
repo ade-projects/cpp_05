@@ -6,7 +6,7 @@
 #    By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/19 13:16:06 by adeestev          #+#    #+#              #
-#    Updated: 2026/09/19 17:52:25 by adeestev         ###   ########.fr        #
+#    Updated: 2026/09/21 11:57:19 by adeestev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = main.cpp\
 	Bureaucrat.cpp\
 	AForm.cpp\
-	ShrubberyCreationForm.cpp
+	ShrubberyCreationForm.cpp\
+	RobotomyRequestForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

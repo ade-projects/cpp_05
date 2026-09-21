@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 15:30:06 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/20 15:37:43 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/21 12:14:07 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -45,7 +45,7 @@ int	main()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
