@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:43:06 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/21 12:05:02 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/23 16:52:42 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "AForm.hpp"
 # include <string>
+
+# include <cstdlib>   
+ #include <ctime>
 
 class RobotomyRequestForm : public AForm
 {

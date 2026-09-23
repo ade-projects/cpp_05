@@ -6,13 +6,11 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:43:01 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/21 13:41:20 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/23 17:05:42 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-#include <cstdlib>
-#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm()
 	: AForm("RobotomyRequestForm", 72, 45), _target("Default_target")
@@ -57,13 +55,13 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 
 	std::cout << "grrrrr!! clunk!! vrrrr... plop!!-" << std::endl;
 
-	srand(time(NULL));
+//	srand(time(NULL)); --->  moved to main file to test randomness
 	if (rand() % 2 == 0)
 	{
 		std::cout << this->_target << " has been successfully robotomized." << std::endl;
 	}
 	else
 	{
-		std::cout << "Robotomyu on " << this->_target << " failed." << std::endl;
+		std::cout << "Robotomy on " << this->_target << " failed." << std::endl;
 	}
 }
