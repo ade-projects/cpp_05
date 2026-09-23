@@ -6,7 +6,7 @@
 /*   By: adeestev <adeestev@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:18:29 by adeestev          #+#    #+#             */
-/*   Updated: 2026/09/23 17:00:22 by adeestev         ###   ########.fr       */
+/*   Updated: 2026/09/23 18:56:51 by adeestev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 #include <exception>
+#include <cstdlib>   
+#include <ctime>
 
 int	main()
 {
